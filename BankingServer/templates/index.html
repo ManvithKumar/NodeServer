@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Login Form</h1>
+    <form>
+        <label>Email</label>
+        <input type="text" placeholder="Email address" name="email"/>
+        <label>Password</label>
+        <input type="text" placeholder="Password" name="password"/>
+        <button onclick="SubmitForm(email,password)">Submit</button>
+    </form>
+</body>
+<script>
+    async function  SubmitForm(email,password){
+        let data = await fetch('http://localhost:8000/api/login',(email,password))
+        console.log(data)
+    }
+</script>
+</html>
